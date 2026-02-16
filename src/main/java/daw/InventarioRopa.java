@@ -71,4 +71,32 @@ public class InventarioRopa {
 
         return null;
     }
+
+    // Método para devolver la posición de un objeto
+    public int devolverPosicion(Ropa producto){  
+        if (inventario.contains(producto)) {
+            return inventario.indexOf(producto);
+        }
+        
+        return -1;
+    }
+
+    // Método para obtener el precio de un producto
+    public double devolverPrecio(Ropa producto) {
+        if (inventario.contains(producto)) {
+            return producto.getPrecio();
+        }
+
+        return -1;
+    }
+
+    // Método para obtener el precio de un producto
+    public double devolverStock(Ropa producto) {
+        if (inventario.contains(producto)) {
+            return producto.getStock();
+        }
+
+        return -1;
+    }
+
 }

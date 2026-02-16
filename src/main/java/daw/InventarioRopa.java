@@ -81,6 +81,17 @@ public class InventarioRopa {
         return -1;
     }
 
+    // Método al que se le pasa un nombre para devolver la posición de un objeto
+    public int devolverPosicion(String nombre){  
+        for (int i = 0; i < inventario.size(); i++) {
+            if (inventario.get(i).getNombre().equalsIgnoreCase(nombre)) {
+                return inventario.indexOf(inventario.get(i));
+            }
+        }
+        
+        return -1;
+    }
+
     // Método para obtener el precio de un producto
     public double devolverPrecio(Ropa producto) {
         if (inventario.contains(producto)) {
@@ -90,10 +101,32 @@ public class InventarioRopa {
         return -1;
     }
 
-    // Método para obtener el precio de un producto
+    // Método para obtener el precio de un producto según su nombre
+    public double devolverPrecio(String nombre) {
+        for (int i = 0; i < inventario.size(); i++) {
+            if (inventario.get(i).getNombre().equalsIgnoreCase(nombre)) {
+                return inventario.get(i).getPrecio();
+            }
+        }
+
+        return -1;
+    }
+
+    // Método para obtener el Stock de un producto
     public double devolverStock(Ropa producto) {
         if (inventario.contains(producto)) {
             return producto.getStock();
+        }
+
+        return -1;
+    }
+
+    // Método para obtener el Stock de un producto según su nombre
+    public double devolverStock(String nombre) {
+        for (int i = 0; i < inventario.size(); i++) {
+            if (inventario.get(i).getNombre().equalsIgnoreCase(nombre)) {
+                return inventario.get(i).getStock();
+            }
         }
 
         return -1;

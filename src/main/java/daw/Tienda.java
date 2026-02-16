@@ -71,16 +71,11 @@ public class Tienda {
                     System.out.print("Introduzca nombre del producto a vender: ");
                     String prod = teclado.next();
 
-                    int pos = -1;
-                    for (int i = 0; i < n.size(); i++) {
-                        if (n.get(i).equalsIgnoreCase(prod)) {
-                            pos = i;
-                            break;
-                        }
-                    }
+                    int pos = inventario.devolverPosicion(prod);
 
                     if (pos != -1) {
-                        System.out.println("Producto encontrado: " + n.get(pos));
+                        
+                        System.out.println("Producto encontrado: " );
                         System.out.println("Precio: " + p.get(pos) + "€ | Stock: " + s.get(pos));
                         System.out.print("Cantidad a comprar: ");
                         int cant = teclado.nextInt();

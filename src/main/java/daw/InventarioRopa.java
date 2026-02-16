@@ -72,6 +72,17 @@ public class InventarioRopa {
         return null;
     }
 
+    // Método para devolver un producto según su posición
+    public Ropa devolverProducto(int posicion) {
+        for (int i = 0; i < inventario.size(); i++) {
+            if () {
+                return inventario.get(i);
+            }
+        }
+
+        return null;
+    } 
+
     // Método para devolver la posición de un objeto
     public int devolverPosicion(Ropa producto){  
         if (inventario.contains(producto)) {
@@ -131,5 +142,4 @@ public class InventarioRopa {
 
         return -1;
     }
-
 }

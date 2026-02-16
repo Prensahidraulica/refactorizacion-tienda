@@ -26,6 +26,10 @@ public class Tienda {
         Ropa producto2 = new Ropa("Pantalón", 30.0, 5);
         Ropa producto3 = new Ropa("Zapatos", 45.0, 2);
 
+        InventarioRopa inventario = new InventarioRopa();
+        inventario.guardar(producto1);
+        inventario.guardar(producto2);
+        inventario.guardar(producto3);
         
         while(true) {
             System.out.println("\n--- TIENDA ---");

@@ -95,10 +95,11 @@ public class Tienda {
                         s.set(pos, s.get(pos) - cant); // Actualizar stock
                         System.out.println("Venta realizada. Total a pagar: " + total + "€");
                         
-                        // Debería ser Singleton
-                        System.out.println("[LOG SYSTEM]: Venta de " + cant + "x " + n.get(pos) + " registrada.");
+                        // Lógica de registro de venta
+                        Singleton logger = Singleton.getInstance();
+                        logger.log("Venta de " + cant + " x " + n.get(pos) + " registrada.");
                         if(s.get(pos) < 3) {
-                            System.out.println("[LOG SYSTEM]: ALERTA DE STOCK BAJO para " + n.get(pos));
+                            logger.log("ALERTA DE STOCK BAJO para " + n.get(pos));
                         }
                         
                     } else {

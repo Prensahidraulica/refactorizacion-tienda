@@ -26,18 +26,27 @@ public class Tienda {
         Ropa producto2 = new Ropa("Pantalón", 30.0, 5);
         Ropa producto3 = new Ropa("Zapatos", 45.0, 2);
 
+        // Añadir los datos de prueba al inventario
         InventarioRopa inventario = new InventarioRopa();
         inventario.guardar(producto1);
         inventario.guardar(producto2);
         inventario.guardar(producto3);
+
+        boolean seguir = true;
+        String menu = """
+                \n --- TIENDA ---
+
+                Seleccione el número de la opción que quiere elegir:
+
+                1. Añadir producto.
+                2. Mostrar inventario.
+                3. Realizar venta.
+                4. Salir
+
+                """;
         
-        while(true) {
-            System.out.println("\n--- TIENDA ---");
-            System.out.println("1. Añadir producto");
-            System.out.println("2. Mostrar inventario");
-            System.out.println("3. Realizar venta");
-            System.out.println("4. Salir");
-            System.out.print("Seleccione una opción: ");
+        while(seguir) {
+            System.out.println(menu);
             
             int op = sc.nextInt();
             
@@ -111,7 +120,7 @@ public class Tienda {
                 
             } else if(op == 4) {
                 System.out.println("Saliendo...");
-                break;
+                seguir = false;
             } else {
                 System.out.println("Opción no válida.");
             }

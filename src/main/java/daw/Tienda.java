@@ -22,15 +22,10 @@ public class Tienda {
         Scanner sc = new Scanner(System.in);
         
         // Datos de prueba iniciales
-        n.add("Camiseta");
-        p.add(15.0);
-        s.add(10);
-        n.add("Pantalón");
-        p.add(30.0);
-        s.add(5);
-        n.add("Zapatos");
-        p.add(45.0);
-        s.add(2);
+        Ropa producto1 = new Ropa("Camiseta", 15.0, 10);
+        Ropa producto2 = new Ropa("Pantalón", 30.0, 5);
+        Ropa producto3 = new Ropa("Zapatos", 45.0, 2);
+
         
         while(true) {
             System.out.println("\n--- TIENDA ---");

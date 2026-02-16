@@ -64,14 +64,7 @@ public class Tienda {
                     break;
                     
                 case 2:
-                    System.out.println("\n--- INVENTARIO ACTUAL ---");
-                    if (n.isEmpty()) {
-                        System.out.println("No hay productos.");
-                    } else {
-                        for (int i = 0; i < n.size(); i++) {
-                            System.out.println(i + ". " + n.get(i) + " - " + p.get(i) + "€ - Stock: " + s.get(i));
-                        }
-                    }
+                    inventario.mostrar();
                     break;
                 case 3:
                     System.out.println("\n--- VENTA ---");

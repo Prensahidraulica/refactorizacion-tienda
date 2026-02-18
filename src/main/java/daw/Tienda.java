@@ -75,13 +75,13 @@ public class Tienda {
 
                     if (pos != -1) {
                         
-                        System.out.println("Producto encontrado: " );
-                        System.out.println("Precio: " + p.get(pos) + "€ | Stock: " + s.get(pos));
+                        System.out.println("Producto encontrado: " + inventario.devolverProducto(pos));
+                        System.out.println("Precio: " + inventario.devolverPrecio(pos) + "€ | Stock: " + inventario.devolverStock(pos));
                         System.out.print("Cantidad a comprar: ");
-                        int cant = teclado.nextInt();
+                        int cantidad = teclado.nextInt();
 
-                        if (s.get(pos) >= cant) {
-                            double total = cant * p.get(pos);
+                        if (inventario.devolverStock(pos) >= cantidad) {
+                            double total = cantidad * inventario.devolverPrecio(pos);
 
                             // Hay números fijos que se utilizan en el código
                             if (total > 50) {
@@ -89,14 +89,14 @@ public class Tienda {
                                 total = total * 0.90;
                             }
 
-                            s.set(pos, s.get(pos) - cant); // Actualizar stock
+                            inventario.devolverProducto(pos).setStock(inventario.devolverStock(pos) - cantidad); // Actualizar stock
                             System.out.println("Venta realizada. Total a pagar: " + total + "€");
 
                             // Lógica de registro de venta
                             Singleton logger = Singleton.getInstance();
-                            logger.log("Venta de " + cant + " x " + n.get(pos) + " registrada.");
-                            if (s.get(pos) < 3) {
-                                logger.log("ALERTA DE STOCK BAJO para " + n.get(pos));
+                            logger.log("Venta de " + cantidad + " x " + inventario.devolverProducto(pos) + " registrada.");
+                            if (inventario.devolverStock(pos) < 3) {
+                                logger.log("ALERTA DE STOCK BAJO para " + inventario.devolverProducto(pos));
                             }
 
                         } else {
